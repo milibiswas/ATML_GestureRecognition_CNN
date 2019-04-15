@@ -8,6 +8,21 @@ Gesture Recognition in American Sign Language using Deep Convolution Networks.In
 networks to classify images of both the the letters and digits​ ​in​ ​American​ ​Sign​ ​Language. We have followed the paper "Using​ ​Deep​ ​Convolutional​ ​Networks​ ​for  Gesture​ ​Recognition​ ​
 in​ ​American​ ​Sign​ ​Language" by Vivek​ ​Bheda​​ ​and​​ ​​N.​ ​Dianna​ ​Radpour, Department​ ​of​ ​Computer​ ​Science,​ ​Department​ ​of​ ​Linguistics State​ ​University​ ​of​ ​New​ ​York​ ​at​ ​Buffalo.  
 
+
+==============================================
+Getting the dataset
+==============================================
+
+"Using​ ​Deep​ ​Convolutional​ ​Networks​ ​for  Gesture​ ​Recognition​ ​in​ ​American​ ​Sign​ ​Language"
+- Download dataset from the following link and unpack everything into a folder /dataset
+http://www.massey.ac.nz/~albarcza/gesture_dataset2012.html
+
+"sign language and static-gesture recognition using scikit-learn"
+- Download dataset from the following link and unpack everything into a folder /dataset_2
+https://medium.freecodecamp.org/weekend-projects-sign-language-and-static-gesture-recognition-using-scikit-learn-60813d600e79
+
+
+
 ==============================================
 Folder Structure
 ==============================================
