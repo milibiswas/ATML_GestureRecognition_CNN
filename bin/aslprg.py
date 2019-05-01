@@ -5,95 +5,22 @@ Created on Wed Apr  3 09:36:46 2019
 @author: Mili Biswas (MSc - Computer Sc.)
 
 """
-import os
-import numpy as np
 import torch
-from torchvision.transforms import Compose,ToTensor,Resize,Normalize,RandomHorizontalFlip,RandomRotation
-from torchvision.datasets import ImageFolder
-from torch.utils.data import DataLoader
 import torch.nn as nn
 from matplotlib import pyplot as plt
+
+import data_loader_massey as dlm
+import data_loader_kaggle as dlk
+
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
 ##############################
 # Type of dataset
 
 DATASET_MESSEY=False
-DATASET_KAGGLE=False
-
-##############################
-
-path = "../data/dataset"
-path1 = "../data"
-path_valid = "../data/valid"
-path_train = "../data/train"
+DATASET_KAGGLE=True
 
 
-####################   Test    #########################
-
-pathTestDataSource="../test/dataset"
-pathTestDataTarget="../test/testdata"
-
-########################################################
-
-if os.path.exists(os.path.join(path1,'valid')) and os.path.exists(os.path.join(path1,'train')) :
-    pass
-else:
-    os.mkdir(os.path.join(path1,'valid'))
-    os.mkdir(os.path.join(path1,'train'))
-
-# The shuffle will hold image files' indexes in random order
-
-shuffle = np.random.permutation(len(os.listdir(path)))
-
-ls = []
-
-# preparing valid folder test/valid
-for i in os.listdir(path):
-    ls.append((i.split('_')[1],i,))
-
-def prepare_valid_data(index,ls):
-    for i in shuffle[:index]:
-        if os.path.exists(os.path.join(path_valid,ls[i][0])):
-            os.rename(os.path.join(path,ls[i][1]),os.path.join(path_valid,ls[i][0],ls[i][1]))
-        else:
-            print('ok')
-            os.mkdir(os.path.join(path_valid,ls[i][0]))
-            os.rename(os.path.join(path,ls[i][1]),os.path.join(path_valid,ls[i][0],ls[i][1]))
-
-def prepare_train_data(index,ls):
-    for i in shuffle[index:]:
-        if os.path.exists(os.path.join(path_train,ls[i][0])):
-            os.rename(os.path.join(path,ls[i][1]),os.path.join(path_train,ls[i][0],ls[i][1]))
-        else:
-            os.mkdir(os.path.join(path_train,ls[i][0]))
-            os.rename(os.path.join(path,ls[i][1]),os.path.join(path_train,ls[i][0],ls[i][1]))
-
-def prepare_test_data(pathTestDataSource,pathTestDataTarget):
-    ls=[]
-    for i in os.listdir(pathTestDataSource):
-        ls.append((i.split('_')[1],i,))
-
-    for i,j in enumerate(ls):
-        if os.path.exists(os.path.join(pathTestDataTarget,ls[i][0])):
-            os.rename(os.path.join(pathTestDataSource,ls[i][1]),os.path.join(pathTestDataTarget,ls[i][0],ls[i][1]))
-        else:
-            os.mkdir(os.path.join(pathTestDataTarget,ls[i][0]))
-            os.rename(os.path.join(pathTestDataSource,ls[i][1]),os.path.join(pathTestDataTarget,ls[i][0],ls[i][1]))
-
-prepare_valid_data(800,ls)
-prepare_train_data(800,ls)
-prepare_test_data(pathTestDataSource,pathTestDataTarget)
-
-# preparing dataset-train dataset/ validation datadset
-transform = Compose([Resize([128,128]),RandomHorizontalFlip(0.4),RandomRotation(0.2),ToTensor(),Normalize(mean=(0.5,0.5,0.5),std=(0.5,0.5,0.5))])
-train_dataset = ImageFolder(path_train,transform=transform)
-valid_dataset = ImageFolder(path_valid,transform=transform)
-#print(valid_dataset[0])
-# preparing dataloader - train dataloader /validation dataloader
-
-train_dataloader = DataLoader(train_dataset,batch_size=50)
-valid_dataloader = DataLoader(valid_dataset,batch_size=50)
 
 # preparing the model
 
@@ -146,15 +73,6 @@ class ConvModel(nn.Module):
         conv_out_flat = conv_out.view(conv_out.size(0),-1)
         out=self.linear_layer(conv_out_flat)
         return out
-
-
-
-#........................................
-model = ConvModel()
-model = model.to(device)
-loss_fn = nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model.parameters(),lr=.0001)
-#--------------------------------------------------
 
 # train/ validate the model
 
@@ -218,41 +136,56 @@ def fit(model,train_dataloader,valid_dataloader,loss_fn,optimizer,n_epoch):
     return train_losses , train_accuracies,valid_losses,valid_accuracies
 
 
+if __name__=="__main__":
+    
+    if DATASET_KAGGLE:
+        d=dlk.data_loader_kaggle()
+    if DATASET_MESSEY:
+        d=dlm.data_loader_messey()
+        
+
+    train_dataloader=d.train_dataloader
+    valid_dataloader=d.valid_dataloader
+    
+    #........................................
+    model = MLPModel()
+    model = model.to(device)
+    loss_fn = nn.CrossEntropyLoss()
+    optimizer = torch.optim.Adam(model.parameters(),lr=.0001)
+    #--------------------------------------------------
+    
+    t_losses , t_accuracies,v_losses,v_accuracies = fit(model,train_dataloader,valid_dataloader,loss_fn,optimizer,25)
 
 
-t_losses , t_accuracies,v_losses,v_accuracies = fit(model,train_dataloader,valid_dataloader,loss_fn,optimizer,25)
+    ##########################
+    #   plot function
+    ##########################
+    '''
+    def plot (x_axis,y_axis,plotName=None):
+        if plotName=="scatter":
+            plt.scatter(x_axis,y_axis)
+            plt.show()
+        else:
+            plt.plot(x_axis,y_axis)
+            plt.show()
+    
+    plot(range(len(t_losses)),t_losses)
+    plot(range(len(t_accuracies)),t_accuracies)
+    
+    plot(range(len(v_losses)),t_losses)
+    plot(range(len(v_accuracies)),t_accuracies)
+    '''
+    #######################################
+    #     Test phase
+    #######################################
+    
+    #  Data Loader (Test)
+    '''test_dataloader = d.test_dataloader
+    
+    test_accuracy=test(model,test_dataloader)
+    
+    print("======================== Test Accurracy Score ========================")
+    print("Accuracy Score : ",test_accuracy)
+    print("========================        End           ========================")
 
-
-##########################
-#   plot function
-##########################
 '''
-def plot (x_axis,y_axis,plotName=None):
-    if plotName=="scatter":
-        plt.scatter(x_axis,y_axis)
-        plt.show()
-    else:
-        plt.plot(x_axis,y_axis)
-        plt.show()
-
-plot(range(len(t_losses)),t_losses)
-plot(range(len(t_accuracies)),t_accuracies)
-
-plot(range(len(v_losses)),t_losses)
-plot(range(len(v_accuracies)),t_accuracies)
-'''
-#######################################
-#     Test phase
-#######################################
-
-#  Data Loader (Test)
-path_test = '../test/testdata'
-
-test_dataset = ImageFolder(path_test,transform=transform)
-test_dataloader = DataLoader(test_dataset,batch_size=100,shuffle=True)
-
-test_accuracy=test(model,test_dataloader)
-
-print("======================== Test Accurracy Score ========================")
-print("Accuracy Score : ",test_accuracy)
-print("========================        End           ========================")
