@@ -11,14 +11,16 @@ from matplotlib import pyplot as plt
 
 import data_loader_massey as dlm
 import data_loader_kaggle as dlk
+import data_loader_asl as d_asl
 
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
 ##############################
 # Type of dataset
 
-DATASET_MESSEY=False
-DATASET_KAGGLE=True
+DATASET_MESSEY = False
+DATASET_KAGGLE = False
+DATASET_ASL = True
 
 
 
@@ -142,6 +144,8 @@ if __name__=="__main__":
         d=dlk.data_loader_kaggle()
     if DATASET_MESSEY:
         d=dlm.data_loader_messey()
+    if DATASET_ASL:
+        d=d_asl.data_loader_asl()
         
 
     train_dataloader=d.train_dataloader
@@ -151,10 +155,10 @@ if __name__=="__main__":
     model = MLPModel()
     model = model.to(device)
     loss_fn = nn.CrossEntropyLoss()
-    optimizer = torch.optim.Adam(model.parameters(),lr=.0001)
+    optimizer = torch.optim.Adam(model.parameters(), lr=.0001)
     #--------------------------------------------------
     
-    t_losses , t_accuracies,v_losses,v_accuracies = fit(model,train_dataloader,valid_dataloader,loss_fn,optimizer,25)
+    t_losses , t_accuracies,v_losses,v_accuracies = fit(model,train_dataloader,valid_dataloader,loss_fn,optimizer, 25)
 
 
     ##########################
