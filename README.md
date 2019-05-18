@@ -36,4 +36,5 @@ https://www.kaggle.com/grassknoted/asl-alphabet
 ### Step 2: run the below statement from command line
             python ./bin/asl_project.py
             
-### Otherwise, just use the jupiter notebook and trigger it.
+### Otherwise, just use the below jupiter notebook and trigger it.
+             report.ipynb
