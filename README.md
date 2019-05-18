@@ -1,7 +1,7 @@
 # ATML_GestureRecognition_CNN
 
-======================
-Project description
+
+## Project description
 ======================
 
 Gesture Recognition in American Sign Language using Deep Convolution Networks.In this project, we implement a method for using deep convolutional       
