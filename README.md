@@ -33,4 +33,6 @@ https://www.kaggle.com/grassknoted/asl-alphabet
 
 ## Installation Procedure
 
-### Step 1:
+### Step 1: First clone this reporistory
+### Step 2: run the below statement from command line
+            python ./bin/
