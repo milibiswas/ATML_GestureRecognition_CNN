@@ -2,16 +2,12 @@
 
 
 ## Project description
-======================
 
 Gesture Recognition in American Sign Language using Deep Convolution Networks.In this project, we implement a method for using deep convolutional       
 networks to classify images of both the the letters and digits​ ​in​ ​American​ ​Sign​ ​Language. We have followed the paper "Using​ ​Deep​ ​Convolutional​ ​Networks​ ​for  Gesture​ ​Recognition​ ​
 in​ ​American​ ​Sign​ ​Language" by Vivek​ ​Bheda​​ ​and​​ ​​N.​ ​Dianna​ ​Radpour, Department​ ​of​ ​Computer​ ​Science,​ ​Department​ ​of​ ​Linguistics State​ ​University​ ​of​ ​New​ ​York​ ​at​ ​Buffalo.  
 
-
-======================
-Getting the dataset
-======================
+## Getting the dataset
 
 "Using​ ​Deep​ ​Convolutional​ ​Networks​ ​for  Gesture​ ​Recognition​ ​in​ ​American​ ​Sign​ ​Language"
 - Download dataset from the following link and unpack everything into a folder /dataset
@@ -26,9 +22,7 @@ https://medium.freecodecamp.org/weekend-projects-sign-language-and-static-gestur
 https://www.kaggle.com/grassknoted/asl-alphabet
 - Delete folders 'space' and 'del' from train dataset as well as del and space test pics
 
-======================
-Folder Structure
-======================
+## Folder Structure
 
 1. bin --> This folder contains all the python scripts related to the project.
 2. data --> This folder contains all the data (Training, Validation & Test)
@@ -37,10 +31,6 @@ Folder Structure
 5. doc --> This folder contains documents related to the project or relevant research papers used.
 
 
-The script "main.py" will initiate the program.
+## Installation Procedure
 
-======================
-Installation Procedure
-======================
-
-To be defined.
+### Step 1:
