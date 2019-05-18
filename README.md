@@ -35,4 +35,6 @@ https://www.kaggle.com/grassknoted/asl-alphabet
 
 ### Step 1: First clone this reporistory
 ### Step 2: run the below statement from command line
-            python ./bin/
+            python ./bin/asl_project.py
+            
+### Otherwise, just use the jupiter notebook and trigger it.
