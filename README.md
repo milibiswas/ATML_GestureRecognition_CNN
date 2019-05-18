@@ -3,8 +3,7 @@
 
 ## Project description
 
-Gesture Recognition in American Sign Language using Deep Convolution Networks.In this project, we implement a method for using deep convolutional       
-networks to classify images of both the the letters and digits​ ​in​ ​American​ ​Sign​ ​Language. We have followed the paper "Using​ ​Deep​ ​Convolutional​ ​Networks​ ​for  Gesture​ ​Recognition​ ​
+Gesture Recognition in American Sign Language using Deep Convolution Networks. In this project, we implement a method for using deep convolutional networks to classify images of both the the letters and digits​ ​in​ ​American​ ​Sign​ ​Language. We have followed the paper "Using​ ​Deep​ ​Convolutional​ ​Networks​ ​for  Gesture​ ​Recognition​ ​
 in​ ​American​ ​Sign​ ​Language" by Vivek​ ​Bheda​​ ​and​​ ​​N.​ ​Dianna​ ​Radpour, Department​ ​of​ ​Computer​ ​Science,​ ​Department​ ​of​ ​Linguistics State​ ​University​ ​of​ ​New​ ​York​ ​at​ ​Buffalo.  
 
 ## Getting the dataset
