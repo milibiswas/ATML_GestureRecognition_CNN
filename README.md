@@ -25,9 +25,9 @@ https://www.kaggle.com/grassknoted/asl-alphabet
 ## Folder Structure
 
 1. bin --> This folder contains all the python scripts related to the project.
-2. data --> This folder contains all the data (Training, Validation & Test)
-3. lib --> This folder contains external libraries (Open source APIs)
-4. test --> This folder contains test scripts
+2. data --> This folder contains all the datasets as well as container for train and validation dynamically.
+3. lib --> This folder contains external libraries (Open source APIs etc.)
+4. test --> This folder contains test data.
 5. doc --> This folder contains documents related to the project or relevant research papers used.
 
 
