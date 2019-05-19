@@ -33,3 +33,6 @@ https://medium.freecodecamp.org/weekend-projects-sign-language-and-static-gestur
             
 ### Otherwise, just use the below jupiter notebook and trigger it.
             report.ipynb
+
+
+### *Note: We ran the original model by commenting the batch norm layers in ConvModel & changed the optimizer to SGD. The original model is not stable with both the datasets (Massey & Kaggle) that we used*
