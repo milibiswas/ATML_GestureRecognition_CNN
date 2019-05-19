@@ -130,6 +130,45 @@ class ConvModel(nn.Module):
         out=self.linear_layer(conv_out_flat)
         return out
 
+class AdvModel(nn.Module):
+    def __init__(self,):
+        super(AdvModel,self).__init__()
+        self.conv_layer=nn.Sequential(
+                nn.Conv2d(3, 64, kernel_size=3, padding=0),
+                nn.LeakyReLU(),
+                nn.Conv2d(64,64,kernel_size=3,padding=0),
+                nn.BatchNorm2d(64),
+                nn.LeakyReLU(),
+                nn.MaxPool2d(kernel_size=2),
+                nn.Dropout(0.1),
+                nn.Conv2d(64,64,kernel_size=3,padding=0),
+                nn.BatchNorm2d(64),
+                nn.LeakyReLU(),
+                nn.Conv2d(64,64,kernel_size=3,padding=0),
+                nn.SELU(),
+                nn.MaxPool2d(kernel_size=2),
+                nn.Dropout(0.1),
+                nn.Conv2d(64,36,kernel_size=3,padding=0),
+                nn.BatchNorm2d(36),
+                nn.SELU(),
+                nn.Conv2d(36,36, kernel_size=3,padding=0),
+                nn.SELU(),
+                nn.MaxPool2d(kernel_size=2),
+                nn.Dropout(0.1)
+                )
+        self.linear_layer=nn.Sequential(
+                nn.Linear(36*12*12, 256),
+                nn.Dropout(0.20),
+                nn.Linear(256, 128),
+                nn.Dropout(0.20),
+                nn.Linear(128, 36),
+                )
+    def forward(self,input):
+        conv_out = self.conv_layer(input)
+        conv_out_flat = conv_out.view(conv_out.size(0),-1)
+        out=self.linear_layer(conv_out_flat)
+        return out
+
 # train/ validate the model
 
 def train(model,train_dataloader,loss_fn,optimizer):
@@ -203,6 +242,7 @@ def plot(n_epochs, train_losses, val_losses, train_accuracies, val_accuracies):
     plt.xlabel('epoch')
     plt.ylabel('loss value')
     plt.title('Train/val loss');
+    plt.savefig("loss.png")
 
     plt.figure()
     plt.plot(np.arange(n_epochs), train_accuracies)
@@ -234,7 +274,7 @@ if not DATASET_MESSEY:
         #  Model, loss function & optimizer
         #----------------------------------------
         
-        model = ConvModel()
+        model = AdvModel()
         model = model.to(device)
         loss_fn = nn.CrossEntropyLoss()
         #optimizer = torch.optim.SGD(model.parameters(), lr=0.0001, momentum=0.5)
