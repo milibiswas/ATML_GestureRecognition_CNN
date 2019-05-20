@@ -16,11 +16,6 @@ http://www.massey.ac.nz/~albarcza/gesture_dataset2012.html
 - Download dataset from the following link and unpack everything into a folder /dataset_2
 https://medium.freecodecamp.org/weekend-projects-sign-language-and-static-gesture-recognition-using-scikit-learn-60813d600e79
 
-"ASL Alphabet"
-- Download dataset from the following link and unpack everything into a folder /asl_dataset
-https://www.kaggle.com/grassknoted/asl-alphabet
-- Delete folders 'space' and 'del' from train dataset as well as del and space test pics
-
 ## Folder Structure
 
 1. bin --> This folder contains all the python scripts related to the project.
@@ -38,3 +33,6 @@ https://www.kaggle.com/grassknoted/asl-alphabet
             
 ### Otherwise, just use the below jupiter notebook and trigger it.
             report.ipynb
+
+
+### *Note: We ran the original model by commenting the batch norm layers in ConvModel & changed the optimizer to SGD. The original model is not stable with both the datasets (Massey & Kaggle) that we used*
