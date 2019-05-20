@@ -202,7 +202,8 @@ def plot(n_epochs, train_losses, val_losses, train_accuracies, val_accuracies):
     plt.legend(['train_loss', 'val_loss'])
     plt.xlabel('epoch')
     plt.ylabel('loss value')
-    plt.title('Train/val loss');
+    plt.title('Train/val loss')
+    plt.savefig("train_valid_Loss.png")
 
     plt.figure()
     plt.plot(np.arange(n_epochs), train_accuracies)
@@ -211,7 +212,7 @@ def plot(n_epochs, train_losses, val_losses, train_accuracies, val_accuracies):
     plt.xlabel('epoch')
     plt.ylabel('accuracy')
     plt.title('Train/val accuracy')
-    plt.savefig("train_valid.png")
+    plt.savefig("train_valid_Accuracy.png")
     
 def plot_batch_norm(n_epochs, batch_norm):
     plt.figure()
@@ -223,6 +224,7 @@ def plot_batch_norm(n_epochs, batch_norm):
     plt.savefig("batch_norm.png")
 
 # %matplotlib inline
+model=None
 if not DATASET_MESSEY:
   
   if not VGG_PRETRAINED:
@@ -375,6 +377,7 @@ if DATASET_MESSEY:
     plot_batch_norm(100,batchNorm)
 
 #########################  Visualization of Intermediate Layer #########################
+from torchvision import transforms
 d=None
 if DATASET_MESSEY:
   d=dlm.data_loader_messey()
@@ -407,7 +410,7 @@ for (images,labels) in train_dataloader:
 conv_out.remove()
 act=conv_out.features
 
-from torchvision import transforms
+
 
 fig=plt.figure(figsize=(10,10))
 fig.subplots_adjust(left=0,right=1,bottom=0,top=0.8,hspace=0,wspace=0.2)
