@@ -13113,6 +13113,141 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span> <span class="k">as</span> <span class="nn">sh</span>
+
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;./ATML_GestureRecognition_CNN/&quot;</span><span class="p">):</span>
+  <span class="n">sh</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="s2">&quot;./ATML_GestureRecognition_CNN/&quot;</span><span class="p">)</span>
+  
+<span class="o">!</span>git clone https://github.com/milibiswas/ATML_GestureRecognition_CNN.git
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>&#39;rm&#39; is not recognized as an internal or external command,
+operable program or batch file.
+Cloning into &#39;ATML_GestureRecognition_CNN&#39;...
+Checking out files:  15% (733/4827)   
+Checking out files:  16% (773/4827)   
+Checking out files:  17% (821/4827)   
+Checking out files:  18% (869/4827)   
+Checking out files:  19% (918/4827)   
+Checking out files:  20% (966/4827)   
+Checking out files:  21% (1014/4827)   
+Checking out files:  22% (1062/4827)   
+Checking out files:  23% (1111/4827)   
+Checking out files:  24% (1159/4827)   
+Checking out files:  25% (1207/4827)   
+Checking out files:  25% (1245/4827)   
+Checking out files:  26% (1256/4827)   
+Checking out files:  27% (1304/4827)   
+Checking out files:  28% (1352/4827)   
+Checking out files:  29% (1400/4827)   
+Checking out files:  30% (1449/4827)   
+Checking out files:  31% (1497/4827)   
+Checking out files:  32% (1545/4827)   
+Checking out files:  33% (1593/4827)   
+Checking out files:  34% (1642/4827)   
+Checking out files:  35% (1690/4827)   
+Checking out files:  36% (1738/4827)   
+Checking out files:  37% (1786/4827)   
+Checking out files:  38% (1835/4827)   
+Checking out files:  39% (1883/4827)   
+Checking out files:  40% (1931/4827)   
+Checking out files:  40% (1950/4827)   
+Checking out files:  41% (1980/4827)   
+Checking out files:  42% (2028/4827)   
+Checking out files:  43% (2076/4827)   
+Checking out files:  44% (2124/4827)   
+Checking out files:  45% (2173/4827)   
+Checking out files:  46% (2221/4827)   
+Checking out files:  47% (2269/4827)   
+Checking out files:  48% (2317/4827)   
+Checking out files:  49% (2366/4827)   
+Checking out files:  49% (2375/4827)   
+Checking out files:  50% (2414/4827)   
+Checking out files:  51% (2462/4827)   
+Checking out files:  52% (2511/4827)   
+Checking out files:  52% (2515/4827)   
+Checking out files:  53% (2559/4827)   
+Checking out files:  54% (2607/4827)   
+Checking out files:  55% (2655/4827)   
+Checking out files:  56% (2704/4827)   
+Checking out files:  57% (2752/4827)   
+Checking out files:  57% (2761/4827)   
+Checking out files:  58% (2800/4827)   
+Checking out files:  59% (2848/4827)   
+Checking out files:  60% (2897/4827)   
+Checking out files:  61% (2945/4827)   
+Checking out files:  62% (2993/4827)   
+Checking out files:  63% (3042/4827)   
+Checking out files:  63% (3076/4827)   
+Checking out files:  64% (3090/4827)   
+Checking out files:  65% (3138/4827)   
+Checking out files:  66% (3186/4827)   
+Checking out files:  67% (3235/4827)   
+Checking out files:  68% (3283/4827)   
+Checking out files:  69% (3331/4827)   
+Checking out files:  70% (3379/4827)   
+Checking out files:  70% (3389/4827)   
+Checking out files:  71% (3428/4827)   
+Checking out files:  72% (3476/4827)   
+Checking out files:  73% (3524/4827)   
+Checking out files:  74% (3572/4827)   
+Checking out files:  75% (3621/4827)   
+Checking out files:  76% (3669/4827)   
+Checking out files:  77% (3717/4827)   
+Checking out files:  78% (3766/4827)   
+Checking out files:  78% (3801/4827)   
+Checking out files:  79% (3814/4827)   
+Checking out files:  80% (3862/4827)   
+Checking out files:  81% (3910/4827)   
+Checking out files:  82% (3959/4827)   
+Checking out files:  83% (4007/4827)   
+Checking out files:  84% (4055/4827)   
+Checking out files:  85% (4103/4827)   
+Checking out files:  86% (4152/4827)   
+Checking out files:  87% (4200/4827)   
+Checking out files:  88% (4248/4827)   
+Checking out files:  89% (4297/4827)   
+Checking out files:  89% (4315/4827)   
+Checking out files:  90% (4345/4827)   
+Checking out files:  91% (4393/4827)   
+Checking out files:  92% (4441/4827)   
+Checking out files:  93% (4490/4827)   
+Checking out files:  94% (4538/4827)   
+Checking out files:  95% (4586/4827)   
+Checking out files:  96% (4634/4827)   
+Checking out files:  97% (4683/4827)   
+Checking out files:  98% (4731/4827)   
+Checking out files:  99% (4779/4827)   
+Checking out files: 100% (4827/4827)   
+Checking out files: 100% (4827/4827), done.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13243,12 +13378,13 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># example of train data</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
 <span class="c1"># Load sample image</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;.\ATML_GestureRecognition_CNN\pic\hand4_z_bot_seg_5_cropped.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;./ATML_GestureRecognition_CNN/pic/hand4_z_bot_seg_5_cropped.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="c1"># Show image</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
@@ -13308,7 +13444,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;.\ATML_GestureRecognition_CNN\pic\F5.jpg&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;./ATML_GestureRecognition_CNN/pic/F5.jpg&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="c1"># Show image</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -13362,135 +13498,6 @@ div#notebook {
 <h3 id="The-above-image-is-from-Kaggle-Dataset">The above image is from Kaggle Dataset<a class="anchor-link" href="#The-above-image-is-from-Kaggle-Dataset">&#182;</a></h3>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git clone https://github.com/milibiswas/ATML_GestureRecognition_CNN.git
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>&#39;rm&#39; is not recognized as an internal or external command,
-operable program or batch file.
-Cloning into &#39;ATML_GestureRecognition_CNN&#39;...
-Checking out files:  15% (733/4827)   
-Checking out files:  16% (773/4827)   
-Checking out files:  17% (821/4827)   
-Checking out files:  18% (869/4827)   
-Checking out files:  19% (918/4827)   
-Checking out files:  20% (966/4827)   
-Checking out files:  21% (1014/4827)   
-Checking out files:  22% (1062/4827)   
-Checking out files:  23% (1111/4827)   
-Checking out files:  24% (1159/4827)   
-Checking out files:  25% (1207/4827)   
-Checking out files:  25% (1245/4827)   
-Checking out files:  26% (1256/4827)   
-Checking out files:  27% (1304/4827)   
-Checking out files:  28% (1352/4827)   
-Checking out files:  29% (1400/4827)   
-Checking out files:  30% (1449/4827)   
-Checking out files:  31% (1497/4827)   
-Checking out files:  32% (1545/4827)   
-Checking out files:  33% (1593/4827)   
-Checking out files:  34% (1642/4827)   
-Checking out files:  35% (1690/4827)   
-Checking out files:  36% (1738/4827)   
-Checking out files:  37% (1786/4827)   
-Checking out files:  38% (1835/4827)   
-Checking out files:  39% (1883/4827)   
-Checking out files:  40% (1931/4827)   
-Checking out files:  40% (1950/4827)   
-Checking out files:  41% (1980/4827)   
-Checking out files:  42% (2028/4827)   
-Checking out files:  43% (2076/4827)   
-Checking out files:  44% (2124/4827)   
-Checking out files:  45% (2173/4827)   
-Checking out files:  46% (2221/4827)   
-Checking out files:  47% (2269/4827)   
-Checking out files:  48% (2317/4827)   
-Checking out files:  49% (2366/4827)   
-Checking out files:  49% (2375/4827)   
-Checking out files:  50% (2414/4827)   
-Checking out files:  51% (2462/4827)   
-Checking out files:  52% (2511/4827)   
-Checking out files:  52% (2515/4827)   
-Checking out files:  53% (2559/4827)   
-Checking out files:  54% (2607/4827)   
-Checking out files:  55% (2655/4827)   
-Checking out files:  56% (2704/4827)   
-Checking out files:  57% (2752/4827)   
-Checking out files:  57% (2761/4827)   
-Checking out files:  58% (2800/4827)   
-Checking out files:  59% (2848/4827)   
-Checking out files:  60% (2897/4827)   
-Checking out files:  61% (2945/4827)   
-Checking out files:  62% (2993/4827)   
-Checking out files:  63% (3042/4827)   
-Checking out files:  63% (3076/4827)   
-Checking out files:  64% (3090/4827)   
-Checking out files:  65% (3138/4827)   
-Checking out files:  66% (3186/4827)   
-Checking out files:  67% (3235/4827)   
-Checking out files:  68% (3283/4827)   
-Checking out files:  69% (3331/4827)   
-Checking out files:  70% (3379/4827)   
-Checking out files:  70% (3389/4827)   
-Checking out files:  71% (3428/4827)   
-Checking out files:  72% (3476/4827)   
-Checking out files:  73% (3524/4827)   
-Checking out files:  74% (3572/4827)   
-Checking out files:  75% (3621/4827)   
-Checking out files:  76% (3669/4827)   
-Checking out files:  77% (3717/4827)   
-Checking out files:  78% (3766/4827)   
-Checking out files:  78% (3801/4827)   
-Checking out files:  79% (3814/4827)   
-Checking out files:  80% (3862/4827)   
-Checking out files:  81% (3910/4827)   
-Checking out files:  82% (3959/4827)   
-Checking out files:  83% (4007/4827)   
-Checking out files:  84% (4055/4827)   
-Checking out files:  85% (4103/4827)   
-Checking out files:  86% (4152/4827)   
-Checking out files:  87% (4200/4827)   
-Checking out files:  88% (4248/4827)   
-Checking out files:  89% (4297/4827)   
-Checking out files:  89% (4315/4827)   
-Checking out files:  90% (4345/4827)   
-Checking out files:  91% (4393/4827)   
-Checking out files:  92% (4441/4827)   
-Checking out files:  93% (4490/4827)   
-Checking out files:  94% (4538/4827)   
-Checking out files:  95% (4586/4827)   
-Checking out files:  96% (4634/4827)   
-Checking out files:  97% (4683/4827)   
-Checking out files:  98% (4731/4827)   
-Checking out files:  99% (4779/4827)   
-Checking out files: 100% (4827/4827)   
-Checking out files: 100% (4827/4827), done.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13768,6 +13775,7 @@ C:\Users\somde\Desktop\ATML\project\ATML_GestureRecognition_CNN\bin
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">model</span><span class="o">=</span><span class="kc">None</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">DATASET_MESSEY</span><span class="p">:</span>
   
   <span class="k">if</span> <span class="ow">not</span> <span class="n">VGG_PRETRAINED</span><span class="p">:</span>
@@ -15258,7 +15266,8 @@ fdJH9AAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="o">=</span><span class="kc">None</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">torchvision</span> <span class="k">import</span> <span class="n">transforms</span>
+<span class="n">d</span><span class="o">=</span><span class="kc">None</span>
 <span class="k">if</span> <span class="n">DATASET_MESSEY</span><span class="p">:</span>
   <span class="n">d</span><span class="o">=</span><span class="n">dlm</span><span class="o">.</span><span class="n">data_loader_messey</span><span class="p">()</span>
 <span class="k">else</span><span class="p">:</span>
@@ -15290,7 +15299,6 @@ fdJH9AAAAABJRU5ErkJggg==
 <span class="n">conv_out</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
 <span class="n">act</span><span class="o">=</span><span class="n">conv_out</span><span class="o">.</span><span class="n">features</span>
 
-<span class="kn">from</span> <span class="nn">torchvision</span> <span class="k">import</span> <span class="n">transforms</span>
 
 <span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">right</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">top</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">hspace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
